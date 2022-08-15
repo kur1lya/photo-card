@@ -9,54 +9,51 @@ import KeyFocus from './components/KeyFocus';
 function App() {
 
   const [images, setImages] = useState([])
-  const [sortimages, setSortImages] = useState([])
   const [isFetching, setIsFetching] = useState(false);
-  const [numberOfPages, setnumberOfPages] = useState(50)
+  const [numberOfPages, setNumberOfPages] = useState(50)
+  const [sortImages, setSortImages] = useState([])
 
 
-  useEffect( () => {
-    fetchData()
-    setnumberOfPages(40)
+  useEffect(() => {
+    fetchData().then(() => {
+      document.getElementById("0").focus();
+    })
+    setNumberOfPages(40)
     window.addEventListener('scroll', handleScroll);
-   
-
   }, [])
+
+
 
   const fetchData = async () => {
     const response = await fetch(`https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=b2f10795395cc5e3fba574d317f41d94&gallery_id=72157719572751649&per_page=${numberOfPages}&page=1&format=json&nojsoncallback=1`)
-    const data = await response.json();
-
+    const data = await response.json()
     setImages(data.photos.photo)
+
+
   }
 
   while (images.length !== 0) {
-    let cut_photo = images.splice(0, 5)
-    sortimages.push(cut_photo)
+    const cut_photo = images.splice(0, 5)
+    sortImages.push(cut_photo)
     let cuur_id_photo = 0;
-    sortimages.forEach((n, i) => {
+    sortImages.forEach((n, i) => {
       n.forEach(element => {
         element.id_photo = cuur_id_photo++
       });
     })
-
-
   }
 
 
 
-  const handleScroll = (e) => {
+
+  const handleScroll = () => {
     if (
       Math.ceil(window.innerHeight + document.documentElement.scrollTop) !== document.documentElement.offsetHeight ||
       isFetching
     )
       return
     setIsFetching(true);
-    console.log(isFetching);
   };
-
-
-
-
 
   useEffect(() => {
     if (!isFetching) return;
@@ -69,18 +66,11 @@ function App() {
     setIsFetching(false);
   };
 
-
-
-
-
-
-
-
   return (
 
     <div className="App">
-      <FullImage sortimages={sortimages}></FullImage>
-      <KeyFocus sortimages={sortimages}></KeyFocus>
+      <FullImage sortImages={sortImages}></FullImage>
+      <KeyFocus sortimages={sortImages}></KeyFocus>
     </div>
 
   );

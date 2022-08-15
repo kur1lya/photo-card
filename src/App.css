@@ -1,6 +1,7 @@
 .App {
   display: grid;
-  grid-row-gap: 300px;
+  grid-row-gap: 100px;
+  margin: 15px;
 }
 
 img {
