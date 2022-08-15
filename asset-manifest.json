@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/.github.io/photo-card/static/css/main.d49a069a.chunk.css",
+    "main.js": "/.github.io/photo-card/static/js/main.d0b17c12.chunk.js",
+    "main.js.map": "/.github.io/photo-card/static/js/main.d0b17c12.chunk.js.map",
+    "runtime-main.js": "/.github.io/photo-card/static/js/runtime-main.18ea8d3e.js",
+    "runtime-main.js.map": "/.github.io/photo-card/static/js/runtime-main.18ea8d3e.js.map",
+    "static/js/2.2ed8415c.chunk.js": "/.github.io/photo-card/static/js/2.2ed8415c.chunk.js",
+    "static/js/2.2ed8415c.chunk.js.map": "/.github.io/photo-card/static/js/2.2ed8415c.chunk.js.map",
+    "static/js/3.e6b567d5.chunk.js": "/.github.io/photo-card/static/js/3.e6b567d5.chunk.js",
+    "static/js/3.e6b567d5.chunk.js.map": "/.github.io/photo-card/static/js/3.e6b567d5.chunk.js.map",
+    "index.html": "/.github.io/photo-card/index.html",
+    "static/css/main.d49a069a.chunk.css.map": "/.github.io/photo-card/static/css/main.d49a069a.chunk.css.map",
+    "static/js/2.2ed8415c.chunk.js.LICENSE.txt": "/.github.io/photo-card/static/js/2.2ed8415c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.18ea8d3e.js",
+    "static/js/2.2ed8415c.chunk.js",
+    "static/css/main.d49a069a.chunk.css",
+    "static/js/main.d0b17c12.chunk.js"
+  ]
+}
